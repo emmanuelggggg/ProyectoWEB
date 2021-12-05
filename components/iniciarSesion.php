@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <?php include_once("../templates/header.php");?>
-    <title>Iniciar Secion</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/estilos.css" type="text/css" />
+    <title>Iniciar Sesion</title>
 </head>
 <body style="margin:0px;">
     <form action="/src/php/iniciar.php" method="post" id="form">

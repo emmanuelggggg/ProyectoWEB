@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include("../templates/header.php");?>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/estilos.css" type="text/css" />
     <title>Registrar Usuario</title>
 </head>
-<body style="margin:0px;">
+<body>
     <form action="/src/php/registrar.php" method="post" id="form">
         <div class="form">
             <div class="encabezado">

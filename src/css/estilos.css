@@ -3,6 +3,7 @@ body{
     margin: 0;
 }
 
+/* comienza el index.php */
 .contPadre{
     height: 100vh;
     display: flex;
@@ -33,7 +34,7 @@ body{
 }
 .buscador ul li {float: right;}
 
-.buscador li a {
+.buscador li a{
     display: flex;
     color: white;
     text-align: center;
@@ -41,6 +42,7 @@ body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
 }
 .buscador li a:hover{background-color: #4CAF50;}  
  
@@ -61,17 +63,18 @@ body{
     margin :0;
     height:40px; 
     border-left: 5px solid #4CAF50;
+    cursor: pointer;
+    transition: 0.3s 0.2s;
 }
-/* .content{margin-top: 55px;} */
+
 
 /* para el anuncio */
 
 .anuncio{
-   
-    padding: 45px;
+    padding: 50px;
     background-color: aliceblue;
     border-radius: 10px;
-    margin-left: 70px;
+    margin-left:0px;
 }
 
 .mensaje{
@@ -89,7 +92,25 @@ h1{
     text-align: center;
 }
 
-/* para logearse o crear cuenta */
+.mensaje  > button{
+    font-family: 'roboto';
+    background: rgb(0, 0, 0);
+    border: none;
+    display: block;
+    width: 70%;
+    height: 40px;
+    margin: 10px auto;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border-radius:5px;
+    transition: 0.3s 0.2s;
+}
+.mensaje > button:hover{
+    transform: scale(1.2, 1.2);
+    background-color: rgb(76, 175, 80);
+}
+/* aqui termina el index.php */
 
 form{
     background: white;
@@ -141,18 +162,7 @@ input:valid~label{
     color: blue;
 }
 
-button{
-    font-family: 'roboto';
-    background: rgb(0, 0, 0);
-    border: none;
-    display: block;
-    width: 70%;
-    height: 40px;
-    margin: 10px auto;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-}
+
 .alerta{
     width: 200px;
     text-align: center;
