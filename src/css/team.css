@@ -9,7 +9,6 @@ body{
     background:url("/src/fotos/fondo.jpg") no-repeat center center fixed;
     background-size: cover;
     margin: 0px;
-   
 }
 .contPadre > div:first-child{
     display: flex;

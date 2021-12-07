@@ -8,7 +8,7 @@
     <title>Registrar Usuario</title>
 </head>
 <body>
-    <form action="/src/php/registrar.php" method="post" id="form">
+<form action="/src/php/registrar.php" method="post" id="form">
         <div class="form">
             <div class="encabezado">
                 <h1>Registro</h1>
@@ -19,6 +19,18 @@
                     <label for="">Nombre</label>
                 </div>
                 <div class="datos">
+                    <input class="entradas" type="text" name="p_apellido" id="name" required>
+                    <label for="">Primer apellido</label>
+                </div>
+                <div class="datos">
+                    <input class="entradas" type="text" name="s_apellido" id="name" required>
+                    <label for="">Segundo apellido</label>
+                </div>
+                <div class="datos">
+                    <input class="entradas" type="date" name="fecha_nac" id="name" required>
+                    <label for="">Fecha de nacimiento</label>
+                </div>
+                <div class="datos">
                     <input class="entradas" type="email" name="correo" id="email" required>
                     <label for="">Correo</label>
                 </div>
@@ -27,10 +39,15 @@
                     <label for="">Contraseña</label>
                 </div>
                 <div class="datos">
+                    <input class="entradas" type="password" name="password2" id="password2" required>
+                    <label for="">Confirmar ontraseña</label>
+                </div>
+                <div class="datos">
                     <span class="rol">Roll : </span>
                     <select name="roll" required>
-                        <option value="1">Administrador</option>
-                        <option value="2">Usuario</option>
+                        <!-- /*Se asiga un numero respectivo al rol, el tres es el mas alto */ -->
+                        <option value="3">Administrador</option>
+                        <option value="2">Ciudadano</option>
                     </select>
                 </div>
                 <button type="submit">Registrar</button>

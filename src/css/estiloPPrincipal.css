@@ -1,4 +1,107 @@
 body{
+    background-color:white;
+    margin: 0;
+}
+/* primer hijo 
+    buscador
+*/
+.containerPadre > div:first-child{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:url("/src/fotos/Copia\ de\ imRed1.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0px;
+}
+
+.buscador2{display: flex;}
+
+.buscador2 > ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+}
+.buscador2 ul li {float: right;}
+.buscador2 li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+.buscador2 li a:hover{background-color: #4CAF50;}  
+.buscador2 li h1{margin-right: 810px;}
+
+.n{
+    display: block;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 9px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin :0;
+    height:40px; 
+    border-left: 5px solid #4CAF50;
+    cursor: pointer;
+    transition: 0.3s 0.2s;
+}
+
+/* mensaje bienvenido */
+.mensaje h1{
+    color: #ffffff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing:3px;
+    font-size: 80px;
+    text-shadow: 1px 19px black;
+}
+.mensaje h2{
+    color: #ffffff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 1px 10px black;
+}
+
+/* Para el segundo hijo */
+
+.containerPadre > div:nth-child(2){
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    background:url("/src/fotos/mundo4.jpeg") no-repeat center center fixed;
+    background-size:inherit;
+    margin: 0px;        
+    align-items: center;
+    justify-content:space-around;
+}
+
+.containerPadre > div:last-child h2{
+    color: #1f1f1f;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    text-align:center;
+    letter-spacing: 2px;
+    
+}
+.segundoChild > div:last-child{
+    width: 100px;
+    height: 100px;
     background-color: #eee;
     color: black;
 }

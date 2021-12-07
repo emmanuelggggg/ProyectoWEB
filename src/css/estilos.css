@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background:url("/src/fotos/fondo.jpg") no-repeat center center fixed;
+    background:url("/src/fotos/morado1.jpeg") no-repeat center center fixed;
     background-size: cover;
     margin: 0px;
 }
