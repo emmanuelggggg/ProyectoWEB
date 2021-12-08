@@ -30,7 +30,7 @@
             </div>
             <div>
                 <div class="info">
-                  info
+                  info 
                 </div>
                 <div class="info">
                    info

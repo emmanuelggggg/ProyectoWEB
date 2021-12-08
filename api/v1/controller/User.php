@@ -1,36 +1,59 @@
 <?php
-include_once ($_SERVER["DOCUMENT_ROOT"]."/api/v1/controller/Controller.php");
-
+include_once($_SERVER["DOCUMENT_ROOT"]."/api/v1/controllers/Controller.php");
 class User extends Controller{
-    function __constructs(){
-        parent::__constructs();
+  function __construct($jsonResponse = true) {
+    parent::__construct($jsonResponse);
+  }
+  function isLoggedIn() {
+    return isset($_SESSION["user"]);
+  }
+  function login() {
+    $response = [];
+    if($this->isLoggedIn()) {
+      $this->code = 401;
+      $response = [
+        "message" => "Usted ya tiene una sesión activa"
+      ];
+    } else if (isset($_POST["email"]) && isset($_POST["password"])) {
+      $email = $_POST["email"];
+      $password = hash("sha256", $_POST["password"]);
+      $user = $this->db->get("SELECT id, name, lastname, email, birthday FROM User WHERE email = '$email' AND password = '$password' LIMIT 1");
+      if (count($user) > 0) {
+        // Si es correcto
+        $_SESSION["user"] = $user[0]->id;
+        $response = [
+          "data" => $user[0],
+          "message" => "Ha iniciado sesión con éxito.",
+        ];
+      } else {
+        // No es correcto
+        $this->code = 401;
+        $response = [
+          "message" => "Correo electrónico y/o contraseña incorrecta.",
+        ];
+      }
+    } else {
+      $this->code = 400;
+      $response = [
+        "message" => "No se solicitó correctamente el servicio, faltan campos: [email, password].",
+      ];
     }
-    function login(){
-        $response=[];
-        if (1==1){
-            $email = $_POST["email"];
-            $password = hash("sha256",$_POST["password"]);
-            $user = $this->db->get("select id,nombre,p_apellido,correo from users where correo='elangelcota@gmail.com' and contraseña=(sha2('root',256)) limit 1;");
-            if(count($user)>0){
-                $this->code=200;
-                $response=[
-                    "message" => "Ha iniciado sesion con exito",
-                ];
-            }else{
-                $this->code=401;
-                $response=[
-                    $data=>$user[0],
-                    "message" => "Correo electronico y/o contraseña incorrectos",
-                ];
-            }
-        }else{
-            $this->code=400;
-            $response=[
-                "message" => "No se solicito correctamente el servicio, faltan campos:(email,password)",
-            ];
-        }
-        return $response;
+    return $response;
+  }
+  function logout() {
+    $response = [];
+    try {
+      session_destroy();
+      $response = [
+        "message" => "Se ha cerrado sesión con éxito."
+      ];
+    } catch (Exception $e) {
+      $this->code = 500;
+      $response = [
+        "message" => "Ha ocurrido un error inesperado, por favor intentelo nuevamente y si el problema persiste contacte a servicio al cliente.",
+        "details" => $e->getMessage()
+      ];
     }
+    return $response;
+  }
 }
-
-?>

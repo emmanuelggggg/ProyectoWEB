@@ -1,6 +1,7 @@
 <?php
     include_once ($_SERVER["DOCUMENT_ROOT"]."/api/v1/controller/User.php");
     
-    $user = new User(false);
+    $user = new User();
     $response = $user->login();
     $user->response($response);
+?>
